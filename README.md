@@ -64,21 +64,22 @@ CipherChat/
 │
 ├── requirements.txt        # List of dependencies
 └── README.md               # Documentation
----
-📌 How to Run
-1. Install Dependencies:
+## 📌 How to Run
 
-Bash
+**1. Install Dependencies:**
+```bash
 pip install -r requirements.txt
-2. Start the Server:
+
+**2. Start the Server:**
 Navigate to the server directory and run the central hub first.
 
-Bash
+```Bash
 cd server
 python server.py
-3. Launch the Client(s):
+
+**3. Launch the Client(s):**
 Open a new terminal, navigate to the client directory, and start the application. You can run multiple instances of this to test multi-client chatting.
 
-Bash
+```Bash
 cd client
 python client.py
