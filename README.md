@@ -2,30 +2,31 @@
 
 > **A Secure, Multi-Client, End-to-End Encrypted Communication System.**
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
-![Security](https://img.shields.io/badge/Security-AES--256-green)
-![GUI](https://img.shields.io/badge/GUI-CustomTkinter-orange)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Security](https://img.shields.io/badge/Security-AES--256_Encryption-brightgreen?style=for-the-badge)
+![Networking](https://img.shields.io/badge/Networking-TCP_Sockets-blue?style=for-the-badge)
 
 ## 📖 Overview
-**CipherChat** is a desktop messaging application designed to demonstrate the principles of **Network Security** and **Cryptography**. Unlike traditional chat apps where the server can read your messages, CipherChat employs a **Zero-Knowledge Architecture**.
 
-Messages are encrypted on your device (Client) using **AES-256** and are only decrypted on the receiver's device. The central server acts merely as a postman and cannot read any content, ensuring total privacy.
+**CipherChat** is a robust desktop messaging application designed to demonstrate the core principles of Network Security and Cryptography. Unlike traditional chat applications where the server can read or log your messages, CipherChat strictly employs a **Zero-Knowledge Architecture**. 
+
+Messages are encrypted locally on your device (the Client) using advanced AES-256 encryption and are only decrypted upon reaching the intended receiver's device. The central server acts merely as a blind postman routing encrypted bytes, ensuring total privacy and data confidentiality.
 
 ---
 
 ## 🚀 Key Features
 
 ### 🔒 Security Features
-* **End-to-End Encryption (E2EE):** Uses **AES (Fernet)** to encrypt messages before they leave the device.
-* **Data Integrity:** Implements **HMAC-SHA256** signatures to detect tampering during transit.
-* **Secure Authentication:** Uses **PBKDF2** (Password-Based Key Derivation) to generate strong 32-byte keys from a simple Room Password.
-* **Zero-Knowledge Server:** The server routes encrypted bytes without access to decryption keys.
+* **End-to-End Encryption (E2EE):** Utilizes AES (Fernet) to encrypt all messages before they ever leave your device.
+* **Data Integrity:** Implements HMAC-SHA256 signatures to actively detect any tampering or packet manipulation during transit.
+* **Secure Authentication:** Employs PBKDF2 (Password-Based Key Derivation Function) to generate cryptographically strong 32-byte keys from a simple Room Password.
+* **Zero-Knowledge Server:** The server architecture routes raw encrypted bytes without ever having access to the decryption keys or plain-text data.
 
 ### 💻 Application Features
-* **Multi-Client Support:** Real-time group chatting over Local Area Network (LAN).
-* **Modern GUI:** Built with **CustomTkinter** for a professional Dark Mode experience.
-* **Hacker View / Developer Mode:** A dedicated toggle switch that reveals the raw **Ciphertext** (e.g., `gAAAA...`) to visually prove encryption is active.
-* **Live Status Indicators:** Visual feedback for connection status (Connected/Disconnected).
+* **Multi-Client Support:** Facilitates real-time group chatting and broadcasting over a Local Area Network (LAN).
+* **Modern GUI:** Built with `CustomTkinter` to provide a sleek, professional Dark Mode user experience.
+* **Hacker View / Developer Mode:** Features a dedicated UI toggle that reveals the raw ciphertext (e.g., `gAAAA...`) to visually demonstrate the active encryption process.
+* **Live Status Indicators:** Provides real-time visual feedback for network connection and authentication status.
 
 ---
 
@@ -38,7 +39,7 @@ Messages are encrypted on your device (Client) using **AES-256** and are only de
 | **Networking** | Python `socket` (TCP) | Reliable Data Transmission |
 | **Concurrency** | `threading` | Handling UI and Network simultaneously |
 | **Cryptography** | `cryptography.fernet` | Symmetric Encryption (AES) |
-| **Key Derivation** | `PBKDF2HMAC` | Generating Keys from Passwords |
+| **Key Derivation**| `PBKDF2HMAC` | Generating Strong Keys from Passwords |
 
 ---
 
@@ -63,3 +64,21 @@ CipherChat/
 │
 ├── requirements.txt        # List of dependencies
 └── README.md               # Documentation
+---
+📌 How to Run
+1. Install Dependencies:
+
+Bash
+pip install -r requirements.txt
+2. Start the Server:
+Navigate to the server directory and run the central hub first.
+
+Bash
+cd server
+python server.py
+3. Launch the Client(s):
+Open a new terminal, navigate to the client directory, and start the application. You can run multiple instances of this to test multi-client chatting.
+
+Bash
+cd client
+python client.py
