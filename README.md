@@ -64,6 +64,7 @@ CipherChat/
 │
 ├── requirements.txt        # List of dependencies
 └── README.md               # Documentation
+
 ## 📌 How to Run
 
 **1. Install Dependencies:**
